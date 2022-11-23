@@ -30,14 +30,14 @@ public class SliderPuzzle extends JFrame implements ActionListener {
         gameButton.addActionListener(this);
 
         nullButton.setBackground(Color.WHITE);
-        buttonList.add(nullButton);
+
         for(int i = 1; i <= 15; i ++) {
             JButton button = new JButton(String.valueOf(i));
             button.setBackground(Color.WHITE);
             button.addActionListener(this);
             buttonList.add(button);
         }
-
+        buttonList.add(nullButton);
         for(JButton button : buttonList) {
             puzzlePanel.add(button);
         }
