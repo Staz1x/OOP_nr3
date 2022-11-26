@@ -30,7 +30,7 @@ public class SliderPuzzle extends JFrame implements ActionListener {
 
         gameButton.addActionListener(this);
 
-        nullButton.setBackground(Color.RED);
+        nullButton.setBackground(Color.PINK);
 
         for(int i = 1; i <= 15; i ++) {
             JButton button = new JButton(String.valueOf(i));
@@ -40,9 +40,9 @@ public class SliderPuzzle extends JFrame implements ActionListener {
             finishedPuzzleList.add(button);
         }
         buttonList.add(nullButton);
+        finishedPuzzleList.add(nullButton);
         for(JButton button : buttonList) {
             puzzlePanel.add(button);
-            finishedPuzzleList.add(button);
         }
 
         pack();
@@ -92,12 +92,10 @@ public class SliderPuzzle extends JFrame implements ActionListener {
                 for(JButton button : buttonList) puzzlePanel.add(button);
                 puzzlePanel.setLayout(new GridLayout(4,4));
                 revalidate();
-                if(solved(buttonList)==true){
-                    JOptionPane.showMessageDialog(null, "Huzzah!");
+                if(solved(buttonList)){
+                    JOptionPane.showMessageDialog(null, "Huzzah! \nDu vann!");
                 }
             }
         }
-
     }
-
 }
