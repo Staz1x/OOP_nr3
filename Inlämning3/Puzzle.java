@@ -5,6 +5,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Puzzle extends JFrame implements ActionListener {
 
@@ -65,7 +66,7 @@ public class Puzzle extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == gameButton) {
-
+            //Collections.shuffle();
         }
     }
 }

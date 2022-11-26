@@ -25,11 +25,8 @@ public class SliderPuzzle extends JFrame implements ActionListener {
         add(buttonPanel, BorderLayout.NORTH);
 
         buttonPanel.add(gameButton);
-
-        puzzlePanel.setLayout(new GridLayout(4,4));
-
         gameButton.addActionListener(this);
-
+        puzzlePanel.setLayout(new GridLayout(4,4));
         nullButton.setBackground(Color.PINK);
 
         for(int i = 1; i <= 15; i ++) {
