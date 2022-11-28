@@ -48,6 +48,7 @@ public class SliderPuzzle extends JFrame implements ActionListener {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
     }
+    //Hitta vilken knapp som saknar siffra
     public int findNullButton() {
         int nullButtonPlace = 0;
         for(JButton button : buttonList) {
@@ -57,18 +58,19 @@ public class SliderPuzzle extends JFrame implements ActionListener {
         }
         return nullButtonPlace;
     }
-    public boolean canSwap(int nullButtonPlace, int clickedButtonPlace) {
+    //Kollar om tryck knapp ligger ovan/under eller höger/vänster om tom knapp
+    public boolean canSwap(int nullButtonPlace, int clickedButtonPlace) { //Kollar över/under
         if(nullButtonPlace%4 == clickedButtonPlace%4) {
             if(Math.abs(nullButtonPlace/4 - clickedButtonPlace/4)==1)
                 return true;
         }
-        if(nullButtonPlace/4 == clickedButtonPlace/4) {
+        if(nullButtonPlace/4 == clickedButtonPlace/4) { //Kollar höger/vänster
             if(Math.abs(nullButtonPlace - clickedButtonPlace) == 1)
                 return true;
         }
         return false;
     }
-
+    //Kollar om spelet är löst
     public boolean solved (List<JButton> buttonList){
         return buttonList.equals(finishedPuzzleList);
     }
